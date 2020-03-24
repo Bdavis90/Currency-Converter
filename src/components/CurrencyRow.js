@@ -7,7 +7,6 @@ const CurrencyRow = ({
   onChangeExchange,
   amount
 }) => {
-  console.log(currencyLocations);
   return (
     <div>
       <input type="number" value={amount} onChange={onChangeExchange} />

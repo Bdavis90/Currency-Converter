@@ -22,11 +22,8 @@ function App() {
     fromAmount = parseFloat(amount / exchangeRate).toFixed(2);
   }
 
-  console.log(currencyLocations);
-  console.log(exchangeRate);
   useEffect(() => {
     axios.get("https://api.exchangeratesapi.io/latest").then(data => {
-      console.log(data);
       const firstCurrency = Object.keys(data.data.rates)[0];
       setCurrencyLocations([data.data.base, ...Object.keys(data.data.rates)]);
       setFromLocation(data.data.base);
@@ -42,7 +39,6 @@ function App() {
           `https://api.exchangeratesapi.io/latest?base=${fromLocation}&symbols=${toLocation}`
         )
         .then(data => {
-          console.log(data.data.rates[toLocation]);
           setExchangeRate(data.data.rates[toLocation]);
         });
     }
