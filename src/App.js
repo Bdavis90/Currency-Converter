@@ -16,10 +16,10 @@ function App() {
 
   if (amountInFromLocation) {
     fromAmount = amount;
-    toAmount = amount * exchangeRate;
+    toAmount = parseFloat(amount * exchangeRate).toFixed(2);
   } else {
     toAmount = amount;
-    fromAmount = amount / exchangeRate;
+    fromAmount = parseFloat(amount / exchangeRate).toFixed(2);
   }
 
   console.log(currencyLocations);
